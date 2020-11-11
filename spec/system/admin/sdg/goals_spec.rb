@@ -5,6 +5,7 @@ describe "Goals", :js do
 
   describe "Index" do
     scenario "Visit the index" do
+      Setting["feature.sdg"] = true
       SDG::Goal.where(code: "1").first_or_create!
 
       visit admin_root_path
